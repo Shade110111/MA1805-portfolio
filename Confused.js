@@ -32,4 +32,5 @@ function draw() {
   line(100,205,300,205);
  
   cursor('progress');
+
 }
