@@ -11,8 +11,8 @@ head_y=400
 strokeWeight(0)
 fill(215,175,195)
 ellipse(head_x, head_y,170,260);
-fill(215,175,195)
-ellipse(head_x, head_y,170,260);
+fill(150,40,40)
+ellipse(head_x, head_y-100,165,80);
 
   //headset
 headset_x=350
