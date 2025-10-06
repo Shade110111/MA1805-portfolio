@@ -8,6 +8,9 @@ function draw() {
   i=i+1 //increment frame counter
   slow_nod=(sin(i/100)/32) //nod oscilates +-0.0625, 6000 frame period
 
+//shawl_back
+fill(50,100,140)
+triangle(580,590,220,590,400,1000);
 //body
 body_x=400
 body_y=530
@@ -24,6 +27,16 @@ circle(body_x, body_y, 80);
 fill(120,120,140)
 rect(body_x-170, body_y-20, 140, 300,100,0,0,0);
 rect(body_x+30, body_y-20, 140, 300,0,100,0,0);
+//shawl
+fill(60,120,160)
+triangle(460,800,610,800,580,590);
+triangle(340,800,190,800,220,590);
+//hoodie strings
+fill(100,100,110)
+strokeWeight(8)
+stroke(200,200,230)
+line(460,550,460,700)
+line(340,550,340,700)
 
 //head
 head_x=(slow_nod+1)*400
@@ -63,5 +76,6 @@ fill(60,120,160)
 rect(headset_front_x+15,headset_front_y+15,70,70);
 circle(headset_front_x,headset_front_y+50,90);
 circle(headset_front_x+100,headset_front_y+50,90);
+
 
 }
