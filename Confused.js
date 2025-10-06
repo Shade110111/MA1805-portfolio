@@ -1,4 +1,4 @@
-i=1
+i=1 //i iterates with each frame
 
 function setup() {
   createCanvas(400, 400);
