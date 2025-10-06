@@ -4,15 +4,26 @@ function setup() {
 }
 
 function draw() {
-  background(205);
+  background(200,200,220);
   i=i+1 //increment frame counter
   slow_nod=(sin(i/100)/32) //nod oscilates +-0.0625, 6000 frame period
 
 //body
 body_x=400
 body_y=530
+//hood
+fill(120,120,140)
+ellipse(body_x,body_y-20,190,110);
+//undershirt
+fill(200,200,230)
+rect(body_x-100, body_y-20, 200, 300, 50);
+//neck
 fill(195,145,165)
 circle(body_x, body_y, 80);
+//hoodie
+fill(120,120,140)
+rect(body_x-170, body_y-20, 140, 300,100,0,0,0);
+rect(body_x+30, body_y-20, 140, 300,0,100,0,0);
 
 //head
 head_x=(slow_nod+1)*400
@@ -21,25 +32,30 @@ strokeWeight(0)
 fill(215,175,195)
 ellipse(head_x, head_y,170,260);
 //hair
+hair_x=((slow_nod*1.3)+1)*400
 fill(80,50,50)
-ellipse(head_x, head_y-100,165,90);
+ellipse(hair_x, head_y-100,165,90);
 ellipse(head_x-75, head_y-60,35,80);
 ellipse(head_x+75, head_y-60,35,80);
 //facial hair
-rect(head_x-40,head_y+55, 80, 80, 23);
+rect(hair_x-40,head_y+55, 80, 80, 23);
 fill(215,175,195)
-rect(head_x-20,head_y+70, 40, 35, 11);
+rect(hair_x-20,head_y+70, 40, 35, 11);
 
 //headset
-headset_x=((slow_nod*2)+1)*350
+headset_x=((slow_nod*2.3)+1)*350
 headset_y=350
 strokeWeight(0)
+//headset straps
+fill(40,90,130)
+rect((((slow_nod*1.5)+1)*350)-50,headset_y+35,200,30,2);
+//headset body
 fill(50,110,150)
 rect(headset_x,headset_y,100,100);
 circle(headset_x,headset_y+50,100);
 circle(headset_x+100,headset_y+50,100);
 //headset front panel
-headset_front_x=((slow_nod*2.3)+1)*350
+headset_front_x=((slow_nod*2.6)+1)*350
 headset_front_y=350
 fill(80,130,170)
 rect(headset_front_x+5,headset_front_y+5,90,90);
