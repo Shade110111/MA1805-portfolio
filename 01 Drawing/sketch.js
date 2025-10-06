@@ -29,14 +29,14 @@ rect(body_x-170, body_y-20, 140, 300,100,0,0,0);
 rect(body_x+30, body_y-20, 140, 300,0,100,0,0);
 //shawl
 fill(60,120,160)
-triangle((((sin(i/8)/128)*0.9)+1)*460,800,610,800,580,590);
-triangle((((sin(i/9)/128)*0.9)+1)*340,800,190,800,220,590);
+triangle((((sin(i/8)/128)*0.9)+1)*460,800,610,800,580,590);//(((sin(i/period)/inverse amplitude)*amplitude)+1)*rest position,other coordinate)
+triangle((((sin(i/9)/128)*0.9)+1)*340,800,190,800,220,590);//(((sin(i/period)/inverse amplitude)*amplitude)+1)*rest position,other coordinate)
 //hoodie strings
 fill(100,100,110)
 strokeWeight(8)
 stroke(200,200,230)
-line(460,550,(((sin(i/6)/128)*0.5)+1)*460,700)
-line(340,550,(((sin(i/7)/128)*0.5)+1)*340,700)
+line(460,550,(((sin(i/6)/128)*0.5)+1)*460,700);//(((sin(i/period)/inverse amplitude)*amplitude)+1)*rest position,other coordinate)
+line(340,550,(((sin(i/7)/128)*0.5)+1)*340,700);//(((sin(i/period)/inverse amplitude)*amplitude)+1)*rest position,other coordinate)
 
 //head
 head_x=(slow_nod+1)*400
