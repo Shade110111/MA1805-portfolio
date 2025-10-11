@@ -4,7 +4,7 @@ function setup() {
 }
 
 function draw() {
-  background(200,200,220);
+  background(210,210,220);
   i=i+1 //increment frame counter
   slow_nod=(sin(i/100)/32) //nod oscilates +-0.0625, 6000 frame period
 
@@ -23,6 +23,7 @@ rect(body_x-100, body_y-20, 200, 300, 50);
 //neck
 fill(195,145,165)
 circle(body_x, body_y, 80);
+triangle(body_x-13,body_y+50,body_x-26,body_y,body_x+30,body_y);
 //hoodie
 fill(120,120,140)
 rect(body_x-170, body_y-20, 140, 300,100,0,0,0);
@@ -50,6 +51,8 @@ fill(80,50,50)
 ellipse(hair_x, head_y-100,165,90);
 ellipse(head_x-75, head_y-60,35,80);
 ellipse(head_x+75, head_y-60,35,80);
+triangle(head_x+70,head_y-100,head_x+90,head_y-20,head_x+70,head_y);
+triangle(head_x-70,head_y-100,head_x-90,head_y-20,head_x-70,head_y);
 //facial hair
 rect(hair_x-40,head_y+55, 80, 80, 23);
 fill(215,175,195)
