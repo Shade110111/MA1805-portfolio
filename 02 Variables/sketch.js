@@ -47,7 +47,9 @@ function mouseClicked() {
     fill(random(90,130),random(160,190),100);
     rect(pot_x+1,pot_y-13,5,random(7,11));
 
-    
+    //neon signs
+    let neon_x = random(x,w+x)-7/2;
+    let neon_y = y-9
 
   }
 }
