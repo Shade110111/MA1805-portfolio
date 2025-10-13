@@ -1,3 +1,0 @@
-The emoji is of a man escaping his poverty as he sits on a street in the wind withonly a tarp and hoodie via an expensive VR headset. 
-The emoji compares the escapism of VR to escapism via drugs and could be used as an emoji to convey the ideas of unhealthy coping methods(copium) and irony. 
-The emoji also represents the monitization of misery and how that might be exploited by companies with the power to both worsen the problem and provide their own solution to it.
