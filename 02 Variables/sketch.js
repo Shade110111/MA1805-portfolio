@@ -37,6 +37,41 @@ function mouseClicked() {
       rect(pillar_x,pillar_y, pillarWidth, 1000)
     }
 
+    //windows
+    let window_seperation_y=20;
+    let window_seperation_x=15;
+
+    if (random(0,1)>0.5){
+      for (let a=0;a<(h/window_seperation_y)-1;a++){
+        for (let i=0;i<(w/window_seperation_x)-1;i++){
+          let window_brightness=random(0.6,1);
+          fill(220*window_brightness,210*window_brightness,190*window_brightness);
+          rect(((i)*window_seperation_x)+x+window_seperation_x/2,((a)*window_seperation_y)+y+window_seperation_y/2,6,8)
+        }
+      }
+    }
+
+    //neon signs
+    let neon_width=random(40,60);
+    let neon_x = random(x,w+x)-neon_width/2;
+    let neon_y = y-30;
+    red_green = random(0,1);
+    fill((1-red_green)*255, red_green*255,150);
+    rect(neon_x,neon_y,neon_width,12);
+    fill(255,255,255);
+    if (random(0,1)>0.5){
+      rect(neon_x+2,neon_y+2,2,8)
+      rect(neon_x+35,neon_y+2,3,8)
+    }
+    if (neon_width>55){
+      rect(neon_x+2,neon_y+8,8,2)
+      rect(neon_x+50,neon_y+2,3,3)
+    }
+    if (random(0,1)>0.5){
+      rect(neon_x+10,neon_y+4,3,6)
+      rect(neon_x+25,neon_y+2,4,8)
+    }
+
     //plant pots
     let pot_x = random(x,w+x)-7/2;
     let pot_y = y-9
@@ -47,9 +82,14 @@ function mouseClicked() {
     fill(random(90,130),random(160,190),100);
     rect(pot_x+1,pot_y-13,5,random(7,11));
 
-    //neon signs
-    let neon_x = random(x,w+x)-7/2;
-    let neon_y = y-9
-
+    //crates
+    if (random(0,1)>0.3){
+      let crate_x = random(x,w+x)-12/2;
+      let crate_y = y-5
+      fill(160,110,110);
+      rect(crate_x,crate_y,5,5)
+      rect(crate_x+6,crate_y,5,5)
+      rect(crate_x+3,crate_y-5,5,5)
+    }
   }
 }
