@@ -72,6 +72,17 @@ function mouseClicked() {
       rect(neon_x+25,neon_y+2,4,8)
     }
 
+    //Doors
+    if (random(0,1)>0.4){
+      let door_x = random(x,w+x)-24/2;
+      let door_y = y-17;
+      fill(155,115,95);
+      rect(door_x,door_y,24,17);
+      fill(135,95,75);
+      rect(door_x+2,door_y+2,9,15);
+      rect(door_x+13,door_y+2,9,15);
+    }
+
     //plant pots
     let pot_x = random(x,w+x)-7/2;
     let pot_y = y-9
@@ -86,10 +97,10 @@ function mouseClicked() {
     if (random(0,1)>0.3){
       let crate_x = random(x,w+x)-12/2;
       let crate_y = y-5
-      fill(160,110,110);
-      rect(crate_x,crate_y,5,5)
-      rect(crate_x+6,crate_y,5,5)
-      rect(crate_x+3,crate_y-5,5,5)
+      fill(175,135,115);
+      rect(crate_x,crate_y,5,5);
+      rect(crate_x+6,crate_y,5,5);
+      rect(crate_x+3,crate_y-5,5,5);
     }
   }
 }
