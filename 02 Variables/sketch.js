@@ -74,7 +74,7 @@ function mouseClicked() {
     }
 
     //Doors
-    if (random(0,1)>0.4){
+    if (random(0,1)>0.6){
       let door_x = random(x,w+x)-24/2;
       let door_y = y-17;
       fill(155,115,95);
@@ -95,7 +95,7 @@ function mouseClicked() {
     rect(pot_x+1,pot_y-13,5,random(7,11));
 
     //crates
-    if (random(0,1)>0.3){
+    if (random(0,1)>0.4){
       let crate_x = random(x,w+x)-12/2;
       let crate_y = y-5;
       fill(175,135,115);
