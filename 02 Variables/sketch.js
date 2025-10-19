@@ -5,6 +5,7 @@ function setup() {
 
   textAlign(CENTER);
   textSize(20);
+  textFont('Courier New');
   text('Click me to explore the city!',400,400);
 }
 
@@ -96,11 +97,26 @@ function mouseClicked() {
     //crates
     if (random(0,1)>0.3){
       let crate_x = random(x,w+x)-12/2;
-      let crate_y = y-5
+      let crate_y = y-5;
       fill(175,135,115);
       rect(crate_x,crate_y,5,5);
       rect(crate_x+6,crate_y,5,5);
       rect(crate_x+3,crate_y-5,5,5);
     }
   }
+    //advert
+    let advert_x=random(90,width-180);
+    let advert_y=random(30,height-60);
+    let advert_width=175;
+    let advert_height=75;
+    fill(100);
+    rect((advert_x-advert_width/2)-3,(advert_y-advert_height/2)-3,advert_width+6,advert_height+6);
+    fill(210,180,170);
+    rect(advert_x-advert_width/2,advert_y-advert_height/2,advert_width,advert_height);
+    fill(220,200,190);
+    rect(advert_x-advert_width/2,(advert_y-advert_height/2)+5,advert_width,advert_height-10);
+    fill(0,0,0);
+    textSize(15);
+    text("Sell-out™ \n Buy our product!",advert_x,advert_y-5);
+
 }
