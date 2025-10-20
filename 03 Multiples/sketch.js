@@ -1,9 +1,10 @@
+let time = 0;
+let frame = 0
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  time = 0;
   textAlign(CENTER);
   textSize(32);
-  frame = 0
 }
 
 function draw() {
@@ -15,7 +16,7 @@ function draw() {
   text("Time: " + time.toFixed(0), windowWidth/2, 40);
 
   for(let y=80; y<windowHeight; y += 50){
-      //y = (1-20^-x/100)
+    y = 50*Math.exp(-x/100);
     
     for(let x=0; x<windowWidth; x+= 50){
       fill(160,130,120);
