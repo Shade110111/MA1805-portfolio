@@ -9,11 +9,14 @@ function setup() {
 }
 
 function draw() {
-  background(70);
+  background(50);
 
-  time = time + 1/60;
+  time = time + 1/60; //floating point time in seconds
+  let hours = Math.floor((time/60)+5);
+  let seconds = (Math.floor(time)-((Math.floor(time/60))*60)).toString().padStart(2, '0');
+
   fill(240,0,0)
-  text("Time: " + time.toFixed(0), windowWidth/2, 40);
+  text(hours + ":" + seconds, windowWidth/2, 40);
 
   incriment = 1 //for perspective effect
   for(let y=100; y < windowHeight; y += incriment){
