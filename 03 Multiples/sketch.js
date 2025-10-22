@@ -12,23 +12,18 @@ function setup() {
 //setup consistent seeds for cubicles
 let seeds = [];
 let cubicle_y = 0;
-let cubicle_x = 0;
-incriment = 1
-for(let y=100; y < windowHeight; y += incriment){
-  if (incriment < 50){
-    incriment += 1
+increment = 1
+  for(let y=100; y < windowHeight; y += increment){
+    if (increment < 50){
+      increment += 1
+    }
+    seeds.push([]);
+    seeds[cubicle_y] = [];
+    for(let x=0; x<windowWidth; x+= 50){
+      seeds[cubicle_y].push(random(0,1));
+    }
+    cubicle_y=cubicle_y+1;
   }
-  //y code
-  seeds[cubicle_y] = [];
-  cubicle_y=cubicle_y+1
-  for(let x=0; x<windowWidth; x+= 50){
-    //x code
-    seeds[cubicle_y][cubicle_x] = random(0,1);
-    cubicle_x=cubicle_x+1
-  }
-  console.log(seeds);
-}
-
 
 
 function draw() {
@@ -56,12 +51,12 @@ function draw() {
   cubicle_y = 0;
   cubicle_x = 0;
 
-  incriment = 1 //for perspective effect
-  for(let y=100; y < windowHeight; y += incriment){
-    if (incriment < 50){
-      incriment += 1 //for perspective effect
+  increment = 1 //for perspective effect
+  for(let y=100; y < windowHeight; y += increment){
+    if (increment < 50){
+      increment += 1 //for perspective effect
     }
-    cubicle_y=cubicle_y+1
+    
     for(let x=0; x<windowWidth; x+= 50){
       fill(160,130,120);
       strokeWeight(4);
@@ -77,6 +72,7 @@ function draw() {
       }
       cubicle_x=cubicle_x+1
     }
-
+    cubicle_y=cubicle_y+1;
+    cubicle_x=0;
   }
 }
