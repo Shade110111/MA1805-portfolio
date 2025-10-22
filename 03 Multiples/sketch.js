@@ -99,11 +99,39 @@ function draw() {
       //computer
       strokeWeight(1);
       stroke(20*brightness,20*brightness,20*brightness);
-      fill(45*brightness,45*brightness,45*brightness);
+      fill(45*brightness,45*brightness,45*brightness); //off
+      rect(x+23,y+25,4,5);
+      if ((seeds[cubicle_y][cubicle_x])>0.2 && (seeds[cubicle_y][cubicle_x])<0.5){
+        fill(250);//on white
+      }
+      if ((seeds[cubicle_y][cubicle_x])>0.97){
+        fill(210,0,160);//on magenta
+      }
       rect(x+19,y+20,12,9);
-
-
-
+      //worker
+      strokeWeight(0);
+      if ((seeds[cubicle_y][cubicle_x])<0.1 || (seeds[cubicle_y][cubicle_x])>0.87){
+        fill(100*brightness,60*brightness,60*brightness); //dark skin
+      }
+      else {
+        fill(245*brightness,210*brightness,190*brightness); //light skin
+      }
+      circle(x+25,y+30,5); //head
+      fill(10*brightness,10*brightness,10*brightness);
+      rect(x+21,y+32,8,10,2,2,2,2); //body
+      if ((seeds[cubicle_y][cubicle_x])>0.65 && (seeds[cubicle_y][cubicle_x])<0.78){
+        fill(180*brightness,180*brightness,120*brightness); //light hair
+      }
+      rect(x+22,y+26,6,5,2,2,2,2); //hair
+      //chair
+      strokeWeight(0);
+      fill(40*brightness,40*brightness,75*brightness);
+      rect(x+20,y+33,10,10,2,2,2,2);
+      //plant
+      if ((seeds[cubicle_y][cubicle_x])>0.25 && (seeds[cubicle_y][cubicle_x])<0.7){
+        fill(100*brightness,180*brightness,100*brightness);
+        triangle(x+4,y+45,x+12,y+45,x+8,y+30);
+      }
       cubicle_x = cubicle_x+1
     }
     cubicle_y = cubicle_y+1;
