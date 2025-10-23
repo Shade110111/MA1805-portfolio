@@ -1,6 +1,6 @@
-A huge warehouse of desk workers worship the clock, since I originally planned to
-animate each worker and have their animations offset randomly, each of them is
-redrawn every frame like the ticking clock.
-To prevent flickering between variations and animating in sync each cubicle has a seed,
-a predetermined random number stored within a 2D array. The office changes upon page refresh
-and adjusts to the size of your screen.
+A huge warehouse of desk workers worship the clock, each worker is
+redrawn every frame to animate them so they need a consistent seed to keep track of their
+animation offset and visual variations which I managed to store in a 2D array.
+The office changes upon page refresh and adjusts to the size of your screen.
+The idea is that it is easier to study while staring at hundreds of people having a worse time
+than you are.
