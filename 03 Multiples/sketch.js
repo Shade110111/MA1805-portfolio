@@ -43,7 +43,7 @@ function draw() {
 
 
   //clock logic
-  time = time + 1/50; //floating point time in seconds
+  time = time + 1/10; //floating point time in seconds
   let hours = (Math.floor((time/60)+5)).toString().padStart(2, '0');
   let minutes = (Math.floor(time)-((Math.floor(time/60))*60)).toString().padStart(2, '0');
   fill(240,0,0)
