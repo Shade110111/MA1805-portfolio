@@ -43,11 +43,15 @@ function draw() {
 
 
   //clock logic
-  time = time + 1/60; //floating point time in seconds
+  time = time + 1/50; //floating point time in seconds
   let hours = (Math.floor((time/60)+5)).toString().padStart(2, '0');
   let minutes = (Math.floor(time)-((Math.floor(time/60))*60)).toString().padStart(2, '0');
   fill(240,0,0)
   text(hours + ":" + minutes, windowWidth/2, 40);
+
+  //cubicle time
+  cubicle_time = Math.floor(time*2) - Math.floor(time*2/60)*60;
+  // text (cubicle_time, windowWidth/2, 80); //uncomment to debug cubicle time
 
   //grid logic
   cubicle_y = 0;
@@ -108,6 +112,29 @@ function draw() {
         fill(210,0,160);//on magenta
       }
       rect(x+19,y+20,12,9);
+      //worker coordinate changes based on seed and cubicle_time
+      let head_y_offset = 0;
+      let head_x_offset = 0;
+      let chair_x_offset = 0;
+      personal_cubicle_time = cubicle_time + (seeds[cubicle_y][cubicle_x])*60;
+      if (personal_cubicle_time > 60) {
+        personal_cubicle_time = personal_cubicle_time - 60;
+      }
+      if (personal_cubicle_time >1 && personal_cubicle_time <10) {
+        head_y_offset = 3; //nodding off
+      }
+      if (personal_cubicle_time >10 && personal_cubicle_time <11) {
+        head_x_offset = 1; //look right
+      }
+      if (personal_cubicle_time >11 && personal_cubicle_time <12) {
+        head_x_offset = -1; //look left
+      }
+      if (personal_cubicle_time >30 && personal_cubicle_time <31) {
+        chair_x_offset = -2; //swing chair left
+      }
+      if (personal_cubicle_time >31 && personal_cubicle_time <32) {
+        chair_x_offset = 1; //swing chair right
+      }
       //worker
       strokeWeight(0);
       if ((seeds[cubicle_y][cubicle_x])<0.1 || (seeds[cubicle_y][cubicle_x])>0.87){
@@ -116,17 +143,17 @@ function draw() {
       else {
         fill(245*brightness,210*brightness,190*brightness); //light skin
       }
-      circle(x+25,y+30,5); //head
+      circle(x+25+head_x_offset,y+30+head_y_offset,5); //head
       fill(10*brightness,10*brightness,10*brightness);
       rect(x+21,y+32,8,10,2,2,2,2); //body
       if ((seeds[cubicle_y][cubicle_x])>0.65 && (seeds[cubicle_y][cubicle_x])<0.78){
         fill(180*brightness,180*brightness,120*brightness); //light hair
       }
-      rect(x+22,y+26,6,5,2,2,2,2); //hair
+      rect(x+22+head_x_offset,y+26+head_y_offset,6,5,2,2,2,2); //hair
       //chair
       strokeWeight(0);
       fill(40*brightness,40*brightness,75*brightness);
-      rect(x+20,y+33,10,10,2,2,2,2);
+      rect(x+20+chair_x_offset,y+33,10,10,2,2,2,2);
       //plant
       if ((seeds[cubicle_y][cubicle_x])>0.25 && (seeds[cubicle_y][cubicle_x])<0.7){
         fill(100*brightness,180*brightness,100*brightness);
