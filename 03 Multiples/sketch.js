@@ -10,7 +10,7 @@ function setup() {
   textSize(32);
   textFont('Courier New');
 
-  //setup consistent seeds for cubicles
+  //setup consistent seeds for cubicles (this took many iterations to get right, I realised that let makes a variable local which was causing many of the issues)
   let cubicle_y = 0;
   let increment = 1;
 
