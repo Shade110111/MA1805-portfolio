@@ -5,3 +5,5 @@ the louder the synths are, it is inkeeping with the ideas of the previous sketch
 focuses on channelling more of the feeling of those spaces than showing them off.
 Inkeeping with the projects lonelyness the music will play forever, long after you are gone
 if you leave it.
+
+note: I only found out after making this that it can skip beats on some less powerful devices

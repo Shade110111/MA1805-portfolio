@@ -14,9 +14,11 @@ let wobble_reversed;
 let wobble_bool = true;
 let kick;
 let snare;
+let walls;
 
 function preload() {
   wall = loadImage('Concrete033_4K_Color.jpg');
+  walls = loadImage('walls.png');
   window_image = loadImage('window_city.png');
   click = loadSound('egg timer single.mp3');
   hum = loadSound('AAIA 18 Atmos Deep Rumbly Underwater Synthesised Low Clicky.wav');
@@ -41,6 +43,7 @@ function setup() {
 function draw() {
   background(80);
   image(wall,0,0, windowWidth,windowHeight);
+  image(walls,0,0, windowWidth,windowHeight);
   fill(60);
   strokeWeight(0);
   rect(window_x-10,window_y-10,window_width+20,window_height+20);
@@ -145,6 +148,7 @@ function draw() {
   fill(55);
   textSize(40);
   text("click to hear the breathing of the machine",windowWidth/2,windowHeight/2);
+
 }
 function mouseClicked(){ //starts sounds
   hum.loop();
